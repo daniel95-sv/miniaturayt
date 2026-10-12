@@ -1,0 +1,25 @@
+# MiniaturaYT — Descargador de Miniaturas de YouTube en HD
+
+> MiniaturaYT es una aplicación web gratuita de alto rendimiento para consultar, verificar dimensiones reales y descargar las miniaturas públicas originales de videos de YouTube en resoluciones HD 720p, SD 480p y HQ 360p.
+
+## Descripción del servicio
+MiniaturaYT procesa enlaces de YouTube directamente en el navegador del usuario y se conecta a los servidores de imágenes oficiales de YouTube (i.ytimg.com). La herramienta analiza la disponibilidad de las distintas variantes generadas por YouTube, filtra los marcadores de posición de baja calidad (120×90 px) y permite descargar los archivos originales JPG sin intermediarios ni compresión adicional.
+
+## Características y navegación
+- [Herramienta interactiva](https://miniaturayt.pages.dev/#herramienta): Buscador principal para ingresar URLs de YouTube (estándar, Shorts, enlaces embebidos, acortados youtu.be y directos) y obtener la galería completa de resoluciones.
+- [Cómo funciona](https://miniaturayt.pages.dev/#como-funciona): Explicación técnica de la validación estricta de IDs, comprobación paralela de imágenes y filtrado de sustitución.
+- [Guía de resoluciones oficiales](https://miniaturayt.pages.dev/#resoluciones): Especificaciones técnicas de cada variante generada por YouTube (maxresdefault, sddefault, hqdefault, mqdefault y default) con sus resoluciones en píxeles y relaciones de aspecto.
+- [Preguntas frecuentes](https://miniaturayt.pages.dev/#faq): Respuestas detalladas sobre disponibilidad de miniaturas HD, derechos de propiedad intelectual, compatibilidad móvil y aclaración sobre la inexistencia de miniaturas 4K nativas en la CDN pública de YouTube.
+
+## Resoluciones soportadas
+- **Máxima Resolución (HD 720p):** Archivo `maxresdefault.jpg` con dimensiones de 1280 × 720 píxeles y relación de aspecto 16:9. Disponible si el video original se subió en 720p o superior.
+- **Definición Estándar (SD 480p):** Archivo `sddefault.jpg` con dimensiones de 640 × 480 píxeles y formato 4:3.
+- **Alta Calidad (HQ 360p):** Archivo `hqdefault.jpg` con dimensiones de 480 × 360 píxeles. Disponible de manera universal en prácticamente todos los videos.
+- **Calidad Media (MQ 180p):** Archivo `mqdefault.jpg` con dimensiones de 320 × 180 píxeles y relación 16:9.
+- **Miniatura Baja (LD 90p):** Archivo `default.jpg` con dimensiones de 120 × 90 píxeles.
+
+## Privacidad y arquitectura técnica
+- [Política de Privacidad y Términos](https://miniaturayt.pages.dev/): Procesamiento exclusivo en el lado del cliente (client-side). No recopila datos personales, no utiliza cookies de seguimiento y no almacena las URLs introducidas.
+- [Mapa del sitio XML](https://miniaturayt.pages.dev/sitemap.xml): Índice de páginas y recursos indexables.
+- [Directivas para robots](https://miniaturayt.pages.dev/robots.txt): Configuración de rastreo para motores de búsqueda y agentes de inteligencia artificial.
+- [Catálogo de recursos agénticos (ARD)](https://miniaturayt.pages.dev/.well-known/ai-catalog.json): Manifiesto estructurado conforme al estándar de descubrimiento de capacidades de IA (specVersion 1.0).

@@ -1,0 +1,66 @@
+# MiniaturaYT — Documentación Completa para Modelos de Lenguaje (LLMs)
+
+> MiniaturaYT es una aplicación web gratuita de alto rendimiento diseñada para consultar, verificar y descargar las miniaturas públicas de videos de YouTube en su resolución original máxima (HD 720p).
+
+## Índice
+1. Propósito y Arquitectura
+2. Detección y Validación de URLs
+3. Consulta y Filtrado de Variantes
+4. Especificaciones de Resoluciones Oficiales
+5. Preguntas Frecuentes y Consideraciones Técnicas
+6. Declaración sobre Miniaturas 4K
+7. Privacidad y Seguridad
+
+---
+
+## 1. Propósito y Arquitectura
+MiniaturaYT está construida como una Single-Page Application (SPA) ligera basada en TypeScript y Vite. Su propósito es brindar acceso rápido, confiable y seguro a las imágenes de portada generadas por YouTube para sus videos.
+La arquitectura no utiliza servidores intermediarios para procesar enlaces: la extracción del identificador del video y la comprobación de las imágenes se efectúan íntegramente en el navegador del cliente mediante peticiones paralelas a la CDN oficial de YouTube (`https://i.ytimg.com/vi/{ID}/{variante}.jpg`).
+
+---
+
+## 2. Detección y Validación de URLs
+La aplicación acepta las siguientes estructuras de enlaces:
+- Formato estándar de visualización: `https://www.youtube.com/watch?v=VIDEO_ID`
+- Formato corto oficial: `https://youtu.be/VIDEO_ID`
+- Formato vertical YouTube Shorts: `https://www.youtube.com/shorts/VIDEO_ID`
+- Formato de reproductor embebido: `https://www.youtube.com/embed/VIDEO_ID`
+- Formato de emisiones en vivo: `https://www.youtube.com/live/VIDEO_ID`
+- Identificador directo: Cadena alfanumérica estricta de 11 caracteres (`[a-zA-Z0-9_-]{11}`).
+
+---
+
+## 3. Consulta y Filtrado de Variantes
+Cuando el usuario introduce un enlace, MiniaturaYT comprueba simultáneamente las cinco variantes oficiales de miniaturas.
+Un aspecto crítico del sistema es el filtro contra imágenes de sustitución: si una variante como `maxresdefault.jpg` no fue generada por YouTube (por ejemplo, si el creador subió el video en 480p), YouTube responde con un código HTTP 404 o entrega una imagen por defecto de 120×90 píxeles. MiniaturaYT carga la imagen en memoria y valida sus dimensiones reales; si las dimensiones corresponden al marcador comodín, la variante se descarta automáticamente para evitar entregar una imagen engañosa.
+
+---
+
+## 4. Especificaciones de Resoluciones Oficiales
+| Archivo | Resolución | Relación de aspecto | Disponibilidad |
+| :--- | :--- | :--- | :--- |
+| `maxresdefault.jpg` | 1280 × 720 px | 16:9 | Videos en HD 720p o superior con miniatura personalizada. |
+| `sddefault.jpg` | 640 × 480 px | 4:3 | Mayoría de videos en resolución estándar. |
+| `hqdefault.jpg` | 480 × 360 px | 4:3 | Universal (prácticamente el 100% de los videos). |
+| `mqdefault.jpg` | 320 × 180 px | 16:9 | Formato panorámico reducido para móviles. |
+| `default.jpg` | 120 × 90 px | 4:3 | Marcador de posición básico para miniaturas en listas. |
+
+---
+
+## 5. Declaración sobre Miniaturas 4K
+La CDN pública de YouTube almacena las miniaturas con una resolución máxima nativa de 1280×720 píxeles (`maxresdefault`). Cualquier sitio web o aplicación que afirme descargar "miniaturas nativas en 4K (3840×2160)" está aplicando un escalado o interpolación artificial por software. MiniaturaYT opera con total transparencia técnica entregando el archivo original sin manipulaciones ficticias.
+
+---
+
+## 6. Privacidad y Seguridad
+- Cero almacenamiento de datos: No se registran las URLs ingresadas ni se almacenan historiales en servidores externos.
+- Sin cookies de seguimiento: Únicamente se utiliza `localStorage` para guardar la preferencia visual de Modo Oscuro o Modo Claro.
+- Cabeceras de seguridad estrictas: HSTS con preload activado, Content Security Policy (CSP), protección contra clickjacking (X-Frame-Options: DENY) y aislamiento de permisos.
+
+---
+
+## Enlaces y Recursos
+- Sitio oficial: https://miniaturayt.pages.dev/
+- Repositorio GitHub: https://github.com/daniel95-sv/miniaturayt
+- Manifiesto ARD: https://miniaturayt.pages.dev/.well-known/ai-catalog.json
+- Sitemap: https://miniaturayt.pages.dev/sitemap.xml

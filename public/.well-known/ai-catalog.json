@@ -1,0 +1,29 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "MiniaturaYT",
+    "identifier": "did:web:miniaturayt.pages.dev",
+    "documentationUrl": "https://miniaturayt.pages.dev/#como-funciona",
+    "logoUrl": "https://miniaturayt.pages.dev/og-image.svg"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:miniaturayt.pages.dev:tool:youtube-thumbnail-downloader",
+      "displayName": "MiniaturaYT - Descargador de Miniaturas de YouTube en HD",
+      "type": "text/html",
+      "url": "https://miniaturayt.pages.dev/",
+      "description": "Herramienta web para consultar, verificar y descargar miniaturas oficiales de videos de YouTube en resolución original HD 720p.",
+      "representativeQueries": [
+        "descargar miniatura de youtube hd",
+        "obtener thumbnail de video youtube 1280x720",
+        "descargar portada de youtube en calidad original"
+      ],
+      "tags": [
+        "youtube",
+        "thumbnail",
+        "downloader",
+        "media-tools"
+      ]
+    }
+  ]
+}
