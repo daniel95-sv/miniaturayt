@@ -1,0 +1,17 @@
+{
+  "name": "MiniaturaYT — Descargador de Miniaturas de YouTube",
+  "short_name": "MiniaturaYT",
+  "description": "Consulta y descarga las miniaturas disponibles de YouTube en resoluciones originales HD y verificadas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f10",
+  "theme_color": "#ff0033",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

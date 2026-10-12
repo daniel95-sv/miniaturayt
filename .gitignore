@@ -1,0 +1,34 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Compilación y producción
+dist/
+dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cobertura y testing
+coverage/
+.nyc_output/
+
+# Entorno y secretos
+.env
+.env*.local
+
+# IDEs y SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
