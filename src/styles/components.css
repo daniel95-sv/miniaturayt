@@ -218,7 +218,7 @@ nav.main-nav a:hover {
 .supported-formats {
   margin-top: 1.1rem;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -232,7 +232,7 @@ nav.main-nav a:hover {
   border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 0.82em;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   border: 1px solid var(--border-subtle);
 }
 
@@ -541,6 +541,38 @@ nav.main-nav a:hover {
   color: #f87171;
 }
 
+/* Modos de alto contraste para badges en tema claro */
+[data-theme='light'] .badge--hd {
+  background: rgba(21, 128, 61, 0.12);
+  border-color: rgba(21, 128, 61, 0.35);
+  color: #15803d;
+}
+
+[data-theme='light'] .badge--fhd,
+[data-theme='light'] .badge--sd {
+  background: rgba(29, 78, 216, 0.12);
+  border-color: rgba(29, 78, 216, 0.35);
+  color: #1d4ed8;
+}
+
+[data-theme='light'] .badge--4k {
+  background: rgba(126, 34, 206, 0.12);
+  border-color: rgba(126, 34, 206, 0.35);
+  color: #7e22ce;
+}
+
+[data-theme='light'] .badge--max {
+  background: rgba(220, 38, 38, 0.12);
+  border-color: rgba(220, 38, 38, 0.35);
+  color: #b91c1c;
+}
+
+[data-theme='light'] .badge--unavailable {
+  background: rgba(185, 28, 28, 0.12);
+  border-color: rgba(185, 28, 28, 0.35);
+  color: #b91c1c;
+}
+
 /* Secciones de contenido educativo y SEO */
 .content-section {
   padding: 3.5rem 0;
@@ -672,7 +704,7 @@ nav.main-nav a:hover {
 .faq-item summary::after {
   content: '+';
   font-size: 1.4rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1;
   transition: transform 0.2s ease;
 }
@@ -755,7 +787,7 @@ footer.site-footer {
   max-width: 780px;
   margin: 0 auto 1.5rem;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .footer-nav {
